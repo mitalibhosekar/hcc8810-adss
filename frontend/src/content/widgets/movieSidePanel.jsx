@@ -22,7 +22,7 @@ class MovieSidePanel extends Component {
 	render() {
 		let byline = this.props.panelByline;
 		return (
-			<div className="col-sm-4 gy-sm-0" id={this.props.id}>
+			<div className="col-sm-12 gy-sm-4" id={this.props.id}>
 				<div className="align-items-center justify-content-center"
 					style={{
 						height: byline.length > 0 ? "108px" : "81", padding: "27px 18px",
@@ -37,7 +37,7 @@ class MovieSidePanel extends Component {
 					: ''
 					}
 				</div>
-				<ListGroup as="ul">
+				<ListGroup horizontal as="ul">
 					{this.props.movieList.map((movie) => (
 						this.props.render({
 							key: movie.movie_id,

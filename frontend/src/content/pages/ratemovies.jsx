@@ -8,6 +8,7 @@ import withRouter from "../hooks/withRouter";
 import { API } from "../utils/constants";
 import MovieGrid from "../widgets/movieGrid";
 
+
 class RatingPage extends Component {
 
     moviesRatingCount = 10;

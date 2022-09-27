@@ -14,7 +14,8 @@ from setpath import set_data_path
 from lenskit.datasets import MovieLens
 
 # You can import different algorithms here from Lenskit
-from lenskit.algorithms import als
+#from lenskit.algorithms import als
+from lenskit.algorithms import user_knn as knn
 
 data_path = set_data_path()
 attri_name = ['user', 'item', 'rating', 'timestamp']
@@ -22,7 +23,7 @@ attri_name = ['user', 'item', 'rating', 'timestamp']
 # This is the training data being loaded
 ratings_train = MovieLens('data/ml-latest-small').ratings
 
-
+ 
 ## 1 - Discounting the input ratings by ranking
 # 1.1 - Calculating item rating counts and popularity rank,
 # This will be used to discount the popular items from the input side
@@ -60,7 +61,8 @@ print("Training models ...")
 start = time.time()
 
 # This is where you train your model using your algorithm of choice
-algo = als.BiasedMF(20, iterations=10, method="lu")
+#algo = als.BiasedMF(20, iterations=10, method="lu")
+algo = knn.UserUser(20, min_nbrs= 5)
 
 algo.fit(ratings_train)
 end = time.time() - start
