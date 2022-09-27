@@ -95,6 +95,7 @@ class MovieGrid extends Component {
 	}
 
 	changeRating = (newRating, movieid) => {
+		console.log(newRating, movieid);
 		let level = this.state.currentPage;
 		let movieLst = [...this.state.movies];
 		let vstdLst = [...this.state.visited];

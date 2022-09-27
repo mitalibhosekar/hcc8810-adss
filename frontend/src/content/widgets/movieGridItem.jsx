@@ -24,7 +24,7 @@ class MovieGridItem extends Component {
 				}}>
 				<div className="overlay">
 					<div className={starDivClass}>
-						{<StarRatings
+						{/*<StarRatings
 							rating={currentMovie.rating}
 							starRatedColor="rgb(252,229,65)"
 							starHoverColor="rgb(252,229,65)"
@@ -32,8 +32,9 @@ class MovieGridItem extends Component {
 							starSpacing="1px"
 							changeRating={changeRating}
 							numberOfStars={5}
-							name={currentMovie.movie_id} />}
-						<button onClick={()=> this.handleClick(changeRating, 5)} type="button" class="btn btn-primary">Thumbs Up</button>
+			name={currentMovie.movie_id} />*/}
+						<button onClick={() => changeRating(5, currentMovie.movie_id)} type="button" class="btn btn-primary">Thumbs Up</button>
+						<button onClick={() => changeRating(1, currentMovie.movie_id)} type="button" class="btn btn-primary">Thumbs Down</button>
 
 					</div>
 					

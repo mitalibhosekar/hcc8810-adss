@@ -352,12 +352,12 @@ class RecommendationPage extends Component {
                         hoverHandler={this.handleHover}
                         ratingHandler={this.handleRating}
                     />
-                    <div className="col-sm-4 gx-sm-4" id="moviePosterPreview">
+                    <div className="col-sm-12 gx-sm-4" id="moviePosterPreview">
                         {this.state.setIsShown && (this.state.activeMovie != null) ? (
                             <Card bg="dark" text="white" style={{
                                 backgroundColor: '#333', borderColor: '#333'
                             }}>
-                                <Card.Body style={{ height: '700px' }}>
+                                <Card.Body style={{ height: '350px' }}>
                                     <Card.Img variant="top" className="d-flex mx-auto d-block img-thumbnail"
                                         src={this.state.activeMovie.poster} alt={"Poster of the movie " +
                                             this.state.activeMovie.title}
@@ -372,7 +372,7 @@ class RecommendationPage extends Component {
                                     </Container>
                                 </Card.Body>
                             </Card>
-                        ) : (<div style={{ height: "700px" }} />)
+                        ) : (<div style={{ height: "500px" }} />)
                         }
                     </div>
                     {/* <MovieSidePanel id="rightPanel"
