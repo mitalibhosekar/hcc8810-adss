@@ -352,28 +352,33 @@ class RecommendationPage extends Component {
                         hoverHandler={this.handleHover}
                         ratingHandler={this.handleRating}
                     />
-                    <div className="col-sm-12 gx-sm-4" id="moviePosterPreview">
+                    <div className="row align-items-center pt-4" id="moviePosterPreview">
+                         
                         {this.state.setIsShown && (this.state.activeMovie != null) ? (
                             <Card bg="dark" text="white" style={{
                                 backgroundColor: '#333', borderColor: '#333'
                             }}>
                                 <Card.Body style={{ height: '350px' }}>
-                                    <Card.Img variant="top" className="d-flex mx-auto d-block img-thumbnail"
+                                    <Card.Img variant="top" className="col-lg-6 order-1 d-flex mx-auto d-block img-thumbnail"
                                         src={this.state.activeMovie.poster} alt={"Poster of the movie " +
                                             this.state.activeMovie.title}
                                         style={{ maxHeight: "63%", minHeight: "63%", width: "auto" }} />
+                                    
+                                    <Container className="col-lg-6 order-2 overflow-auto" style={{ height: "60%" }}>
                                     <Card.Title style={{ marginTop: "0.5rem" }}>
                                         {this.state.activeMovie.title}
                                     </Card.Title>
-                                    <Container className="overflow-auto" style={{ height: "30%" }}>
+                                
+                                    
                                         <Card.Text>
                                             {this.state.activeMovie.description}
                                         </Card.Text>
                                     </Container>
                                 </Card.Body>
                             </Card>
-                        ) : (<div style={{ height: "500px" }} />)
+                        ) : (<div style={{ height: "350px" }} />)
                         }
+                       
                     </div>
                     {/* <MovieSidePanel id="rightPanel"
                         movieList={rightItems}
